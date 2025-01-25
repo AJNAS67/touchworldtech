@@ -1,0 +1,44 @@
+
+<div class="container">
+  <form [formGroup]="employeeForm" (ngSubmit)="handleToSubmit()">
+    <div class="mb-3 mt-3">
+      <label for="employeeName" class="form-label">Employee Name</label>
+      <input
+        type="text"
+        class="form-control w-25"
+        placeholder="Enter mployee Name"
+        formControlName="employeeName"
+      />
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="contactNumber" class="form-label">contactNumber</label>
+      <input
+        type="number"
+        class="form-control w-25"
+        placeholder="Enter contactNumber "
+        formControlName="contactNumber"
+      />
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="email" class="form-label">Employee email</label>
+      <input
+        type="text"
+        class="form-control w-25"
+        placeholder="Enter email"
+        formControlName="email"
+      />
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="address" class="form-label">Employee address</label>
+      <input
+        type="text"
+        class="form-control w-25"
+        placeholder="Enter address"
+        formControlName="address"
+      />
+    </div>
+    <div>
+        <button  type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

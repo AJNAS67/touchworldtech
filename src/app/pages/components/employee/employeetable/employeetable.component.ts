@@ -8,15 +8,16 @@ import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { CommonModule } from '@angular/common';
-import { employeeDetails } from '../../../../services/interface/employee.interface';
+import { employeeDetails } from '../../../../interface/employee.interface';
 import { MainService } from '../../../../services/main.service';
 import { ButtonModule } from 'primeng/button';
+import {  Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-employeetable',
   standalone: true,
-  imports: [TableModule, TagModule, IconFieldModule, InputTextModule, InputIconModule, MultiSelectModule, DropdownModule, HttpClientModule, CommonModule,ButtonModule],
+  imports: [TableModule, TagModule, IconFieldModule, InputTextModule, InputIconModule, MultiSelectModule, DropdownModule, HttpClientModule, CommonModule, ButtonModule],
   templateUrl: './employeetable.component.html',
   styleUrl: './employeetable.component.scss'
 })
@@ -169,7 +170,7 @@ export class EmployeetableComponent implements OnInit {
   ]
   employeeDetails!: employeeDetails[]
   loading!: boolean;
-  constructor(private mainServie: MainService) { }
+  constructor(private mainServie: MainService, private router: Router) { }
   ngOnInit(): void {
     const customers = [
       {
@@ -321,8 +322,8 @@ export class EmployeetableComponent implements OnInit {
     this.customers.forEach((customer: any) => (customer.date = new Date(<Date>customer.date)));
     this.employeeDetails = this.mainServie.gatEmployee()
   }
-  AddEmployee(){
-    
+  AddEmployee() {
+    this.router.navigate(['/addemployee'])
   }
 
 }
