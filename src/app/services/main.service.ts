@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { employeeDetails } from '../interface/employee.interface';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { v4 as uuid } from 'uuid';
+
 
 @Injectable({
   providedIn: 'root'
@@ -62,11 +64,17 @@ export class MainService {
   gatEmployee() {
     return this.employeeDetails;
   }
-  getEmployeeList() {
+  getEmployeeList(): employeeDetails[] {
     return this.employeeSubject.getValue()
   }
-  addEmployee() {
-
+  addEmployee(employee: Omit<employeeDetails, 'id'>) {
+    const employees = this.getEmployeeList()
+    const newEmployee: employeeDetails = { id: uuid(), ...employee }
+    this.employeeSubject.next([...employees, newEmployee])
+  }
+  delteEmployee(id: string) {
+    const employee = this.getEmployeeList().filter(employee => employee.id != id)
+    this.employeeSubject.next(employee)
   }
 
   // getApiDetails(){

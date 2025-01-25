@@ -24,7 +24,9 @@ export class AddemployeeComponent implements OnInit {
   }
   handleToSubmit() {
     console.log(this.employeeForm.value, 'val');
-    this.router.navigate(['/employee'])
+    this.mainService.addEmployee(this.employeeForm.value);
+    this.employeeForm.reset()
+    this.router.navigate(['/employee/employeeList'])
 
   }
   loadData() {

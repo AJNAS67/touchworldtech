@@ -1,7 +1,7 @@
 <div class="card table-wrap">
   <div class="table-container">
     <p-table
-      [value]="employeeDetails"
+      [value]="employeeList"
       [paginator]="true"
       [rows]="5"
       [tableStyle]="{ width: '100%' }"
@@ -12,10 +12,10 @@
           <th pSortableColumn="employeeName" style="width: 25%">
             EMPLOYEE NAME<p-sortIcon field="employeeName" />
           </th>
-          <th style="width: 25%">CONTACT NO</th>
-          <th style="width: 25%">EMAIL</th>
-          <th style="width: 25%">ADDRESS</th>
-          <th style="width: 25%">Action</th>
+          <th style="width: 22%">CONTACT NO</th>
+          <th style="width: 22%">EMAIL</th>
+          <th style="width: 22%">ADDRESS</th>
+          <th style="width: 22%">Action</th>
         </tr>
         <tr>
           <th>
@@ -24,6 +24,7 @@
               field="employeeName"
               placeholder="Search by employeeName"
               ariaLabel="Filter employeeName"
+              [showClearButton]="true"
             />
           </th>
           <th>
@@ -53,14 +54,14 @@
           <th></th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-employeeDetails>
+      <ng-template pTemplate="body" let-employeeList>
         <tr>
-          <td>{{ employeeDetails?.employeeName }}</td>
-          <td>{{ employeeDetails?.contactNumber }}</td>
-          <td>{{ employeeDetails?.email }}</td>
-          <td>{{ employeeDetails.address }}</td>
+          <td>{{ employeeList?.employeeName }}</td>
+          <td>{{ employeeList?.contactNumber }}</td>
+          <td>{{ employeeList?.email }}</td>
+          <td>{{ employeeList.address }}</td>
           <td>
-            <p-button icon="pi pi-times" severity="danger" />
+            <p-button icon="pi pi-trash" severity="danger" (onClick)="handleToDelete(employeeList.id)"/>
           </td>
         </tr>
       </ng-template>

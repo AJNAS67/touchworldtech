@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 import { employeeDetails } from '../../interface/employee.interface';
 import { MainService } from '../../services/main.service';
 import { ButtonModule } from 'primeng/button';
-import {  Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -169,9 +169,13 @@ export class EmployeetableComponent implements OnInit {
     },
   ]
   employeeDetails!: employeeDetails[]
+  employeeList: employeeDetails[] = []
   loading!: boolean;
   constructor(private mainServie: MainService, private router: Router) { }
   ngOnInit(): void {
+    this.mainServie.employeeList$.subscribe((employees) => this.employeeList = employees)
+    console.log(this.employeeList,'employeeList');
+    
     const customers = [
       {
         id: 1000,
@@ -323,7 +327,10 @@ export class EmployeetableComponent implements OnInit {
     this.employeeDetails = this.mainServie.gatEmployee()
   }
   AddEmployee() {
-    this.router.navigate(['/addemployee'])
+    this.router.navigate(['employee/addemployee'])
+  }
+  handleToDelete(id:string){
+    this.mainServie.delteEmployee(id)
   }
 
 }
