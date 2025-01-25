@@ -8,9 +8,8 @@
   <ul>
     @for (menu of menuItems; track $index) {
     <li
-      class=""
       [class.active]="selectedIndex === $index"
-      (click)="setActive($index)"
+      (click)="setActive($index,menu.link)"
     >
       <a>
         <div class="icon">
