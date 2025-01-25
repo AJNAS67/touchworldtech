@@ -6,7 +6,22 @@
     <img src="logo23.png" alt="logo" />
   </div>
   <ul>
-    <li class="active">
+    @for (menu of menuItems; track $index) {
+    <li
+      class=""
+      [class.active]="selectedIndex === $index"
+      (click)="setActive($index)"
+    >
+      <a>
+        <div class="icon">
+          <i [class]="menu.icon"></i>
+        </div>
+        <span>{{ menu.label }}</span></a
+      >
+    </li>
+
+    }
+    <!-- <li class="active">
       <a>
         <div class="icon">
           <i class="pi pi-users"></i>
@@ -21,6 +36,6 @@
         </div>
         <span>API Data table</span>
       </a>
-    </li>
+    </li> -->
   </ul>
 </div>

@@ -11,8 +11,6 @@ import { InputIconModule } from 'primeng/inputicon';
 export class HeaderComponent {
   @Output() toggleActive = new EventEmitter<void>();
   onButtonClick() {
-    console.log('clis');
-    
     this.toggleActive.emit();
   }
 

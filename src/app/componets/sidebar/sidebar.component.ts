@@ -8,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
+  selectedIndex: number = 0;
+  menuItems = [
+    { label: 'Employee List', icon: 'pi pi-users' },
+    { label: 'API Data Table', icon: 'pi pi-table' },
+  ];
+  setActive(index: number): void {
+    this.selectedIndex = index;
+  }
 
 }
