@@ -8,8 +8,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { CommonModule } from '@angular/common';
-import { employeeDetails } from '../../../../interface/employee.interface';
-import { MainService } from '../../../../services/main.service';
+import { employeeDetails } from '../../interface/employee.interface';
+import { MainService } from '../../services/main.service';
 import { ButtonModule } from 'primeng/button';
 import {  Router } from '@angular/router';
 

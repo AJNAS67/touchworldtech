@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { TableModule } from 'primeng/table';
-import { EmployeetableComponent } from '../employeetable/employeetable.component';
-import { SidebarComponent } from '../../../../componets/sidebar/sidebar.component';
-import { HeaderComponent } from '../../../../componets/header/header.component';
+import { EmployeetableComponent } from '../../componets/employeetable/employeetable.component';
+import { SidebarComponent } from '../../componets/sidebar/sidebar.component';
+import { HeaderComponent } from '../../componets/header/header.component';
 
 @Component({
   selector: 'app-employee',

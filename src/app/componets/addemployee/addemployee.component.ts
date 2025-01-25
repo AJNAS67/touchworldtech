@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { EmailValidator, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InputTextModule } from 'primeng/inputtext';
-import { MainService } from '../../../../services/main.service';
+import { MainService } from '../../services/main.service';
 @Component({
   selector: 'app-addemployee',
   standalone: true,
