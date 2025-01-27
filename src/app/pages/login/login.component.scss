@@ -1,0 +1,212 @@
+//   .login-page {
+//     display: flex;
+//     height: 100vh;
+//     background: url('/login-img.webp') no-repeat center center/cover;
+//     background-size: cover;
+//   }
+
+//   .login-left {
+//     flex: 1;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     color: white;
+//     text-align: center;
+//     padding: 20px;
+//   }
+
+//   .login-left h1 {
+//     font-size: 2.5rem;
+//     margin-bottom: 1rem;
+//   }
+
+//   .login-left p {
+//     font-size: 1rem;
+//     max-width: 70%;
+//     line-height: 1.5;
+//   }
+
+//   .login-right {
+//     flex: 1;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background: rgba(255, 255, 255, 0.2); /* Slightly transparent background for the form */
+//   }
+
+//   .login-form {
+//     width: 80%;
+//     max-width: 400px;
+//     text-align: left;
+//   }
+
+//   .login-form h2 {
+//     margin-bottom: 2rem;
+//     color: #333;
+//   }
+
+//   .form-group {
+//     margin-bottom: 1.5rem;
+//   }
+
+//   .form-group label {
+//     display: block;
+//     margin-bottom: 0.5rem;
+//     font-weight: bold;
+//     color: #333;
+//   }
+
+//   .form-group input {
+//     width: 100%;
+//     padding: 0.8rem;
+//     border: 1px solid #ccc;
+//     border-radius: 5px;
+//   }
+
+//   button {
+//     width: 100%;
+//     padding: 0.8rem;
+//     background: #bd1642;
+//     color: white;
+//     border: none;
+//     border-radius: 5px;
+//     cursor: pointer;
+//     font-size: 1rem;
+//   }
+
+//   button:hover {
+//     background: #861130;
+//   }
+
+//   /* Responsive Design */
+//   @media (max-width: 768px) {
+//     .login-left {
+//       display: none; /* Hide left section on mobile */
+//     }
+
+//     .login-right {
+//       flex: 1;
+//       width: 100%; /* Full width for the login form */
+//     }
+
+//     .login-form {
+//       width: 90%;
+//     }
+//   }
+// Variables for colors and sizes
+$primary-color: #007bff;
+$primary-hover-color: #0056b3;
+$error-color: red;
+$text-color: #333;
+
+// Variables for colors
+$primary-color: #bd1642;
+$primary-hover-color: #861130;
+$text-color: #333;
+$border-color: #ccc;
+
+// Login Page Styling
+.login-page {
+  display: flex;
+  height: 100vh;
+  background: url("/login-img.webp") no-repeat center center/cover;
+  background-size: cover;
+
+  // Left Section
+  .login-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 70%;
+      line-height: 1.5;
+    }
+  }
+
+  // Right Section
+  .login-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(
+      255,
+      255,
+      255,
+      0.2
+    ); // Slightly transparent background for the form
+
+    .login-form {
+      width: 80%;
+      max-width: 400px;
+      text-align: left;
+
+      h2 {
+        margin-bottom: 2rem;
+        color: $text-color;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: bold;
+          color: $text-color;
+        }
+
+        input {
+          width: 100%;
+          padding: 0.8rem;
+          border: 1px solid $border-color;
+          border-radius: 5px;
+        }
+      }
+
+      button {
+        width: 100%;
+        padding: 0.8rem;
+        background: $primary-color;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+
+        &:hover {
+          background: $primary-hover-color;
+        }
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    .login-left {
+      display: none; // Hide left section on mobile
+    }
+
+    .login-right {
+      flex: 1;
+      width: 100%; // Full width for the login form
+
+      .login-form {
+        width: 90%;
+      }
+    }
+  }
+}

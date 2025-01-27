@@ -87,4 +87,7 @@ export class MainService {
 
     return this.http.get(this.apiUrl);
   }
+  handleToLogout() {
+    localStorage.removeItem('isLoggedIn')
+  }
 }

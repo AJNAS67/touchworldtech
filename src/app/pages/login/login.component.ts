@@ -1,12 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  loginForm!: FormGroup;
+  authError: boolean = false
 
+
+  constructor(private _router: Router) { }
+  ngOnInit(): void {
+    this.loginForm = new FormGroup({
+      userName: new FormControl(null, [Validators.required]),
+      password: new FormControl(null, [Validators.required])
+    })
+  }
+  handleToLogin() {
+    console.log(this.loginForm.value);
+    if (this.loginForm.value.userName == 'ajnas' && this.loginForm.value.password == 'ajnas') {
+      localStorage.setItem('isLoggedIn', 'true')
+      this.authError = false;
+      this._router.navigate(['/'])
+    }
+    else {
+      this.authError = true
+    }
+  }
 }

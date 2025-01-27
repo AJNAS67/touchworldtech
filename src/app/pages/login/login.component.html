@@ -1,1 +1,44 @@
-<p>login works!</p>
+<div class="login-page">
+  <div class="login-left">
+    <!-- Left-side content -->
+    <h1>Welcome Back!</h1>
+    <p>Access amazing features by logging into your account.</p>
+  </div>
+  <div class="login-right">
+    <div class="login-form">
+      <h2>Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="handleToLogin()">
+        <div class="form-group">
+          <label class="form-group" for="username">Username</label>
+          <input
+            formControlName="userName"
+            type="text"
+            id="username"
+            placeholder="Enter your username"
+          />
+          @if (loginForm.get('userName')?.touched &&
+          !loginForm.get('userName')?.valid) {
+          <small>userName is required</small>
+          }
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            formControlName="password"
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+          />
+          @if (loginForm.get('password')?.touched &&
+          !loginForm.get('password')?.valid) {
+          <small>Password is required</small>
+          }
+        </div>
+        <button type="submit">Login</button>
+        @if (authError) {
+        <small>Invalid userName or password</small>
+        }
+      </form>
+    </div>
+  </div>
+</div>
