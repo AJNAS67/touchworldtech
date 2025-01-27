@@ -1,11 +1,5 @@
-<!-- <div [class.active]="isActive" class="page-wrap">
-  <app-sidebar />
-  <app-header (toggleActive)="toggleActiveClass()" />
-  <app-employeetable />
-</div> -->
-
 <div [class.active]="isActive" class="page-wrap">
   <app-sidebar />
   <app-header (toggleActive)="toggleActiveClass()" />
+  <router-outlet />
 </div>
-<router-outlet />

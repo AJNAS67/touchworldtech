@@ -11,36 +11,7 @@ import { v4 as uuid } from 'uuid';
 export class MainService {
   private apiUrl = 'https://testapp.touchworldtechnology.com/interview/test/v1/product/users?count=20';
 
-  employeeDetails: employeeDetails[] = [
-    {
-      id: '1',
-      employeeName: 'Muhammed Ajnas kp',
-      contactNumber: 9633752203,
-      email: "ajnas@gmail.com",
-      address: "kozhinhi parambil"
-    },
-    {
-      id: '2',
-      employeeName: 'Muhammed Ajnas kp',
-      contactNumber: 9633752203,
-      email: "ajnas@gmail.com",
-      address: "kozhinhi parambil"
-    },
-    {
-      id: '3',
-      employeeName: ' Ajnas kp',
-      contactNumber: 9633752203,
-      email: "ajnas@gmail.com",
-      address: "kozhinhi parambil"
-    },
-    {
-      id: '4',
-      employeeName: 'fayis',
-      contactNumber: 88665522,
-      email: "fayis@gmail.com",
-      address: "fayis house"
-    }
-  ]
+
   private employeeSubject = new BehaviorSubject<employeeDetails[]>([
     {
       id: '1',
@@ -61,9 +32,7 @@ export class MainService {
   employeeList$ = this.employeeSubject.asObservable()
 
   constructor(private http: HttpClient) { }
-  gatEmployee() {
-    return this.employeeDetails;
-  }
+
   getEmployeeList(): employeeDetails[] {
     return this.employeeSubject.getValue()
   }

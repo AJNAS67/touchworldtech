@@ -1,0 +1,22 @@
+::ng-deep .p-inputtext.p-component.p-element {
+  padding: 6px !important;
+  font-size: 13px !important;
+  border-radius: 4px;
+}
+::ng-deep .p-column-filter-menu-button.p-link svg {
+  width: 12px !important;
+  height: 12px !important;
+}
+.table-container {
+  min-height: 600px !important;
+}
+.btn-emp {
+  background-color: #0a8c31;
+  padding: 8px;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 0;
+  margin-left: auto;
+  border: none;
+  outline: none;
+}

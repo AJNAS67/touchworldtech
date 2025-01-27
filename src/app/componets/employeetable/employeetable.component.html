@@ -1,4 +1,7 @@
 <div class="card table-wrap">
+  <div class="card flex justify-content-center">
+    <button (click)="AddEmployee()"class="btn-emp" >Add Employee</button>
+  </div>
   <div class="table-container">
     <p-table
       [value]="employeeList"
@@ -61,13 +64,14 @@
           <td>{{ employeeList?.email }}</td>
           <td>{{ employeeList.address }}</td>
           <td>
-            <p-button icon="pi pi-trash" severity="danger" (onClick)="handleToDelete(employeeList.id)"/>
+            <p-button
+              icon="pi pi-trash"
+              severity="danger"
+              (onClick)="handleToDelete(employeeList.id)"
+            />
           </td>
         </tr>
       </ng-template>
     </p-table>
-    <div class="card flex justify-content-center">
-      <p-button label="Add employee" (onClick)="AddEmployee()" />
-    </div>
   </div>
 </div>

@@ -1,12 +1,14 @@
 
-<div class="container">
-  <form [formGroup]="employeeForm" (ngSubmit)="handleToSubmit()">
+<div class="table-wrap">
+  <form  class="table-container" [formGroup]="employeeForm" (ngSubmit)="handleToSubmit()">
+    <div>
+      <h3>Create Employee Details</h3>
+    </div>
     <div class="mb-3 mt-3">
       <label for="employeeName" class="form-label">Employee Name</label>
       <input
         type="text"
-        class="form-control w-25"
-        placeholder="Enter mployee Name"
+        placeholder="Enter employee Name"
         formControlName="employeeName"
       />
     </div>
@@ -14,7 +16,6 @@
       <label for="contactNumber" class="form-label">contactNumber</label>
       <input
         type="number"
-        class="form-control w-25"
         placeholder="Enter contactNumber "
         formControlName="contactNumber"
       />
@@ -23,7 +24,6 @@
       <label for="email" class="form-label">Employee email</label>
       <input
         type="text"
-        class="form-control w-25"
         placeholder="Enter email"
         formControlName="email"
       />
@@ -32,13 +32,12 @@
       <label for="address" class="form-label">Employee address</label>
       <input
         type="text"
-        class="form-control w-25"
         placeholder="Enter address"
         formControlName="address"
       />
     </div>
     <div>
-        <button  type="submit" class="btn btn-primary">Submit</button>
+        <button  type="submit" class="btn btn-main">Submit</button>
     </div>
   </form>
 </div>

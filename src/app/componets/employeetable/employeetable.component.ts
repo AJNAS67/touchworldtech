@@ -168,7 +168,6 @@ export class EmployeetableComponent implements OnInit {
       balance: 70663
     },
   ]
-  employeeDetails!: employeeDetails[]
   employeeList: employeeDetails[] = []
   loading!: boolean;
   constructor(private mainServie: MainService, private router: Router) { }
@@ -323,8 +322,7 @@ export class EmployeetableComponent implements OnInit {
       },
     ]
     this.loading = false;
-    this.customers.forEach((customer: any) => (customer.date = new Date(<Date>customer.date)));
-    this.employeeDetails = this.mainServie.gatEmployee()
+    
   }
   AddEmployee() {
     this.router.navigate(['employee/addemployee'])

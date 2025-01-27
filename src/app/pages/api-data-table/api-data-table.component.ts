@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './api-data-table.component.scss'
 })
 export class ApiDataTableComponent {
+  constructor() { }
+  getTableData() {
+
+  }
 
 }
