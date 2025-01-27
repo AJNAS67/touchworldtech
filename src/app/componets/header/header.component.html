@@ -1,9 +1,9 @@
 <header>
-  <div>
-    <i class=" pi pi-bars" (click)="onButtonClick()"></i>
+  <div style="cursor: pointer">
+    <i class="pi pi-bars" (click)="onButtonClick()"></i>
   </div>
-  <div class="logout">
+  <div class="logout" (click)="logout()">
     <span>Logout</span>
-    <i class="pi pi-sign-out" (click)="logout()"></i>
+    <i class="pi pi-sign-out"></i>
   </div>
 </header>

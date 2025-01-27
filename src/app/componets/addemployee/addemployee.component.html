@@ -1,6 +1,9 @@
-
 <div class="table-wrap">
-  <form  class="table-container" [formGroup]="employeeForm" (ngSubmit)="handleToSubmit()">
+  <form
+    class="table-container"
+    [formGroup]="employeeForm"
+    (ngSubmit)="handleToSubmit()"
+  >
     <div>
       <h3>Create Employee Details</h3>
     </div>
@@ -11,6 +14,10 @@
         placeholder="Enter employee Name"
         formControlName="employeeName"
       />
+      @if (employeeForm.get('employeeName')?.touched &&
+      !employeeForm.get('employeeName')?.valid) {
+      <small>employee name is required</small>
+      }
     </div>
     <div class="mb-3 mt-3">
       <label for="contactNumber" class="form-label">contactNumber</label>
@@ -19,14 +26,21 @@
         placeholder="Enter contactNumber "
         formControlName="contactNumber"
       />
+      @if (employeeForm.get('contactName')?.touched &&
+      !employeeForm.get('contactName')?.valid) {
+      <small>contactName is required </small>
+      }
     </div>
     <div class="mb-3 mt-3">
       <label for="email" class="form-label">Employee email</label>
-      <input
-        type="text"
-        placeholder="Enter email"
-        formControlName="email"
-      />
+      <input type="text" placeholder="Enter email" formControlName="email" />
+      @if (employeeForm.get('email')?.touched &&
+      employeeForm.get('email')?.hasError('required')) {
+      <small>email is required </small>
+      } @if (employeeForm.get('email')?.touched &&
+      employeeForm.get('email')?.hasError('email')) {
+      <small>Invalid email</small>
+      }
     </div>
     <div class="mb-3 mt-3">
       <label for="address" class="form-label">Employee address</label>
@@ -35,9 +49,19 @@
         placeholder="Enter address"
         formControlName="address"
       />
+      @if (employeeForm.get('address')?.touched &&
+      !employeeForm.get('address')?.valid) {
+      <small>address is required </small>
+      }
     </div>
     <div>
-        <button  type="submit" class="btn btn-main">Submit</button>
+      <button
+        [disabled]="!employeeForm.valid"
+        type="submit"
+        class="btn btn-main"
+      >
+        Submit
+      </button>
     </div>
   </form>
 </div>

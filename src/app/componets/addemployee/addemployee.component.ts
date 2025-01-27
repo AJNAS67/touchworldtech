@@ -17,7 +17,7 @@ export class AddemployeeComponent implements OnInit {
     this.employeeForm = new FormGroup({
       employeeName: new FormControl(null, [Validators.required]),
       contactNumber: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required, Validators.email]),
       address: new FormControl(null, [Validators.required])
     })
   }
@@ -27,6 +27,6 @@ export class AddemployeeComponent implements OnInit {
     this.router.navigate(['/employee/employeeList'])
 
   }
- 
+
 
 }

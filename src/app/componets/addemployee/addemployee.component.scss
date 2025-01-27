@@ -5,35 +5,38 @@
   .table-container {
     min-width: 270px;
     flex-shrink: 0;
-    h3{
-        font-size: 20px;
-        font-weight: 600;
-        color: #333;
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
     }
-    input{
-        width: 100%;
-        font-size: 15px;
-        display: block;
-        padding: 8px;
-        border-radius: 8px;
-        border: 1px solid #ddd;
-        &:focus{
-            outline: 1px solid #139a3f;
-        }
-
+    input {
+      width: 100%;
+      font-size: 15px;
+      display: block;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      &:focus {
+        outline: 1px solid #139a3f;
+      }
     }
-    label{
-        font-size: 15px;
-        font-weight: 500px;
+    
+    small {
+      color: rgb(194, 53, 53);
     }
-    .btn-main{
-        width: 100%;
-        color: #ffff;
-        font-size: 15px;
-        padding: 8px;
-        text-align: center;
-        background-color: #139a3f;
-        margin-top: 15px;
+    label {
+      font-size: 15px;
+      font-weight: 500px;
+    }
+    .btn-main {
+      width: 100%;
+      color: #ffff;
+      font-size: 15px;
+      padding: 8px;
+      text-align: center;
+      background-color: #139a3f;
+      margin-top: 15px;
     }
   }
 }
