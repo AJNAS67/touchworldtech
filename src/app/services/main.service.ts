@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { employeeDetails } from '../interface/employee.interface';
+import { Employee, employeeDetails } from '../interface/employee.interface';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { v4 as uuid } from 'uuid';
@@ -9,7 +9,7 @@ import { v4 as uuid } from 'uuid';
   providedIn: 'root'
 })
 export class MainService {
-  private apiUrl = 'https://testapp.touchworldtechnology.com/interview/test/v1/product/users?count=20';
+  private apiUrl = 'https://testapp.touchworldtechnology.com/interview/test/v1/product/users?count=200000';
 
 
   private employeeSubject = new BehaviorSubject<employeeDetails[]>([
@@ -45,18 +45,10 @@ export class MainService {
     const employee = this.getEmployeeList().filter(employee => employee.id != id)
     this.employeeSubject.next(employee)
   }
-
-  // getApiDetails(){
-  //   let url='https://testapp.touchworldtechnology.com/interview/test/v1/product/users?count=20'
-
-  // }
-
-  fetchUsers(): Observable<any> {
-    console.log('called');
-
-    return this.http.get(this.apiUrl);
-  }
   handleToLogout() {
     localStorage.removeItem('isLoggedIn')
+  }
+  getTableData(): Observable<Employee[]> {
+    return this.http.get<Employee[]>(this.apiUrl);
   }
 }

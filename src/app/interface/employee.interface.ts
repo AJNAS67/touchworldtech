@@ -6,3 +6,8 @@ export interface employeeDetails {
     address: string
 
 }
+export interface Employee {
+    id: number;
+    name: string;
+    date: string;
+  }

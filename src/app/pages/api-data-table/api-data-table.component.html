@@ -1,0 +1,52 @@
+<div class="card table-wrap">
+  @if (loader) {
+
+  <app-loader />
+  } @else {
+
+  <div class="table-container">
+    <p-table
+      [value]="tableDetais"
+      [paginator]="true"
+      [rows]="10"
+      [tableStyle]="{ width: '100%' }"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="name" style="width: 25%">
+            Name<p-sortIcon field="name" />
+          </th>
+          <th pSortableColumn="date" style="width: 22%">
+            Date <p-sortIcon field="date" />
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <p-columnFilter
+              type="text"
+              field="name"
+              placeholder=" Search by Name"
+              ariaLabel="Filter Name"
+              [showClearButton]="true"
+            />
+          </th>
+          <th>
+            <p-columnFilter
+              type="text"
+              field="date"
+              placeholder="Search by Date"
+              ariaLabel="Filter data"
+            />
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-tableDetais>
+        <tr>
+          <td>{{ tableDetais?.name }}</td>
+          <td>{{ tableDetais?.date }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  }
+</div>

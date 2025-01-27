@@ -14,7 +14,6 @@ export class AddemployeeComponent implements OnInit {
   employeeForm!: FormGroup
   constructor(private router: Router, private mainService: MainService) { }
   ngOnInit(): void {
-    this.loadData()
     this.employeeForm = new FormGroup({
       employeeName: new FormControl(null, [Validators.required]),
       contactNumber: new FormControl(null, [Validators.required]),
@@ -23,17 +22,11 @@ export class AddemployeeComponent implements OnInit {
     })
   }
   handleToSubmit() {
-    console.log(this.employeeForm.value, 'val');
     this.mainService.addEmployee(this.employeeForm.value);
     this.employeeForm.reset()
     this.router.navigate(['/employee/employeeList'])
 
   }
-  loadData() {
-    this.mainService.fetchUsers().subscribe((res) => {
-      console.log(res, 'res');
-
-    })
-  }
+ 
 
 }
