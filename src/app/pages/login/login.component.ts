@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   }
   handleToLogin() {
     console.log(this.loginForm.value);
-    if (this.loginForm.value.userName == 'ajnas' && this.loginForm.value.password == 'ajnas') {
+    if (this.loginForm.value.userName == 'touchworld' && this.loginForm.value.password == 'touchworldTech') {
       localStorage.setItem('isLoggedIn', 'true')
       this.authError = false;
       this._router.navigate(['/'])
